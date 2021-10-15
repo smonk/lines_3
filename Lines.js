@@ -8,6 +8,8 @@
 
 //made default values more sensible
 
+
+
 class Lines {
 
 
@@ -22,18 +24,14 @@ class Lines {
         this.arcSize = arcSize
 
         this.nbLinesSlider = createSlider(4, 20, 9, 1 )
-
         this.lineLengthSlider = createSlider(5, 100, 30, 1) 
         this.lineWidthSlider = createSlider(1, 10, 5, 1)
-
         this.radiusSlider = createSlider(5, 200, 50, 1)
-
         this.startAngleSlider = createSlider(90, 270, 120, 1)
         this.endAngleSlider = createSlider(270, 450, 420, 1 )
-
         this.arcSizeSlider = createSlider(20, 250, 120, 1)
-
         this.lineCap = createCheckbox('Rounded Cap', false)
+        
         strokeCap(SQUARE)
 
                 

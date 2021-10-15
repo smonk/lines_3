@@ -3,11 +3,15 @@
 //and scott monk
 
 
+
 class Lines_3 {
 
 
-    constructor(nbRadialMarkers, radialLineLength, radialLineStartRadius, nbLinesPerMarker, radialLinesOffset, nbConcentricLines, concentricLineInnerRadius, concentricLinesOffset, concentricStartAngle, concentricEndAngle, lineWidth ) {
+    constructor(xpos, ypos, nbRadialMarkers, radialLineLength, radialLineStartRadius, nbLinesPerMarker, radialLinesOffset, nbConcentricLines, concentricLineInnerRadius, concentricLinesOffset, concentricStartAngle, concentricEndAngle, lineWidth ) {
 
+
+        this.xpos = xpos;
+        this.ypos = ypos;
         this.nbRadialMarkers = nbRadialMarkers;        
         this.radialLineLength = radialLineLength;
         this.radialLineStartRadius =radialLineStartRadius;
@@ -91,8 +95,8 @@ class Lines_3 {
     show(){
 
 
-        let centerX = width/2
-        let centerY = height/2
+        let centerX = this.xpos;
+        let centerY = this.ypos;
     
         push();
         translate(centerX, centerY +50)
@@ -141,7 +145,9 @@ class Lines_3 {
 
         for( let j = 0; j < this.nbConcentricLines; j++ ){
             noFill();
-            arc( 0, 0, (this.concentricLineInnerRadius + j*this.concentricLinesOffset)*2, (this.concentricLineInnerRadius + j*this.concentricLinesOffset)*2, this.concentricStartAngle + 10*j, this.concentricEndAngle+ 10*j )
+            arc( 0, 0, (this.concentricLineInnerRadius + j*this.concentricLinesOffset)*2, (this.concentricLineInnerRadius + j*this.concentricLinesOffset)*2, this.concentricStartAngle, this.concentricEndAngle )
+
+            // arc( 0, 0, (this.concentricLineInnerRadius + j*this.concentricLinesOffset)*2, (this.concentricLineInnerRadius + j*this.concentricLinesOffset)*2, this.concentricStartAngle + 10*j, this.concentricEndAngle+ 10*j )
             // arc(0, 0, this.arcSize, this.arcSize, this.startAngle, this.endAngle )
         }
 
