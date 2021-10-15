@@ -35,14 +35,15 @@ class master_slider_list{
         background(200);
         // this.sel = createSelect();
         this.sel.position(500, 10);
-        this.sel.option('some_option');
-        this.sel.option('another');
-        this.sel.option('another_one');
+        this.sel.option('line');
+        this.sel.option('dot');
+        // this.sel.option('another_one');
         // this.sel.changed( this.change_design_type );
     }
     //fuck
     poll_drop_down_menus(){
         print(this.sel.value());
+        return(this.sel.value());
     }
 
 }
@@ -91,15 +92,6 @@ class slider_variable{
         text(this.slider_name, 5, this.slider_list.slider_array[this.slider_number].y + 10);
     }
 
-    //this is experimental, maybe jsut make a general clear function that wipes the whole area
-    clear_display_slider_name(){
-        
-        push();
-        fill(220);
-        noStroke();
-        rect(5, this.slider_list[this.slider_number].y + 10 - 20, 200, 20 );
-        pop();
-    }
 
     display_slider_value(){
         push();
